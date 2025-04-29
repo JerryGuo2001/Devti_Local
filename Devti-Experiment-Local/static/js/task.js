@@ -1,6 +1,6 @@
 var debug_mode = 0; // debug mode determines how long the blocks are, 5 sec in debug mode, 5 minutes in actual experiment
 //var data_save_method = 'csv_server_py';
-var data_save_method = 'csv_server_py';
+var data_save_method = 'csv_client';
 
 
 //csv writer deter for finish only
@@ -91,8 +91,6 @@ var welcome = {
     console.log(navigator.userAgent)
     console.log(data.UTC_time)
     subject_id = useridtouse;
-    save_data()
-    localStorage.setItem('RefreshCheck', '1');
   }
 };
 
@@ -1113,7 +1111,6 @@ var end_questions = {
     data.similar = similar
     data.comments = comments
     console.log(problems,smooth,distraction,strategies,easier,similar,comments)
-    save_data()
   }
 };
 function validateForm() {
@@ -1152,10 +1149,6 @@ var comments = 0
 
 
 //time line here
-let RefreshCheck = localStorage.getItem('RefreshCheck');
-if(RefreshCheck=='1'){
-  timeline.end()
-}
 timeline.push(welcome, enterFullscreen)
 timeline.push(instruct_01)
 // timelinepushintro(postprac_learn,post_instructnames)
