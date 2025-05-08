@@ -732,8 +732,7 @@ var thank_you = {
   choices: ['space'],
   stimulus: `<p> Congratulations, you are all done!</p><p> <strong>Please click space on your keyboard to end the experiment!</strong> The secret code to enter at the beginning screen is: <strong>${endCode}</strong></p><p> Please make sure to submit the HIT and email uciccnl@gmail.com if you had any issues! </p><br><p>Please remember to submit this data by clicking space after copying the code. Failure of submission will lead to in-complete payment</p>`,
   on_start: function(data){
-    save_final_deter='final',
-    save_data()
+    save_final_deter='final'
   },
   on_finish: function (data) {
     data.trial_type = 'thank_you';
